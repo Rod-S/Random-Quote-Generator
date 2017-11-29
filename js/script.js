@@ -54,15 +54,15 @@ function printQuote() {
     quoteHTML += '<p class="source">' + randomObject.source + '';
     quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
     var outputDiv = document.getElementById('quote-box');
-	   outputDiv.innerHTML = quoteHTML;
+	  outputDiv.innerHTML = quoteHTML;
   } else {
-    var quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
-    quoteHTML += '<p class="source">' + randomObject.source + '';
-    quoteHTML +=  '<span class="citation">' + randomObject.citation + '</span>';
-    quoteHTML +=  '<span class="year">' + randomObject.year;
-    quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
-    var outputDiv = document.getElementById('quote-box');
-	   outputDiv.innerHTML = quoteHTML;
+      var quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
+      quoteHTML += '<p class="source">' + randomObject.source + '';
+      quoteHTML +=  '<span class="citation">' + randomObject.citation + '</span>';
+      quoteHTML +=  '<span class="year">' + randomObject.year;
+      quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
+      var outputDiv = document.getElementById('quote-box');
+	    outputDiv.innerHTML = quoteHTML;
   };
 };
 
@@ -82,14 +82,14 @@ function getRandomColor() {
 
 //combined function for use with eventListener and setInterval()
 function combineFunction(){
-//calls getRandomColor function and randomizes the HTML background
-getRandomColor();
-//calls getRandomQuote function and prints to HTML page
-printQuote();
+  //calls getRandomColor function and randomizes the HTML background
+  getRandomColor();
+  //calls getRandomQuote function and prints to HTML page
+  printQuote();
 };
 
 //5 second timer to randomly generate quote and background color
 var intervalID = window.setInterval(myCallback, 5000);
 function myCallback() {
-combineFunction();
+  combineFunction();
 };
