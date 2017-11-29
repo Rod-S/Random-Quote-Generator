@@ -60,11 +60,11 @@ body {
   content: " ";
   font-style: italic;
 }
-.category:before{
+.category:before {
   content: ", (";
   font-style: italic;
 }
-.category:after{
+.category:after {
   content: ")";
   font-style: italic;
 }

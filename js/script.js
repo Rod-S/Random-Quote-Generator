@@ -1,5 +1,5 @@
 // event listener to respond to "Show another quote" button clicks
-// when user clicks anywhere on the button, the "combineQuote" function is called
+// when user clicks anywhere on the button, the "combineFunction" function is called
 document.getElementById('loadQuote').addEventListener("click", combineFunction, false);
 
 //array of quote objects
@@ -79,7 +79,7 @@ function getRandomColor() {
   document.body.style.backgroundColor = rgbColor;
 };
 
-//combined function for use with eventListener and setInterval()
+//combined function for use with eventListener() and setInterval()
 function combineFunction(){
   //calls getRandomColor function and randomizes the HTML background
   getRandomColor();
