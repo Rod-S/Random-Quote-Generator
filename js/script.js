@@ -68,7 +68,6 @@ function printQuote() {
 
 //randomize RGB values to override styles.css body background-color key-value pair
 function getRandomColor() {
-  var html = '';
   var red;
   var green;
   var blue;
