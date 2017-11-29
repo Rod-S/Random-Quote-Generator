@@ -43,7 +43,7 @@ var quotes = [
 function getRandomQuote() {
   var object = Math.floor(Math.random() * quotes.length);
   return quotes[object];
-};
+}
 
 //call getRandomQuote function, concatenate HTML string and print quote to the page
 function printQuote() {
@@ -63,8 +63,8 @@ function printQuote() {
       quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
       var outputDiv = document.getElementById('quote-box');
 	    outputDiv.innerHTML = quoteHTML;
-  };
-};
+  }
+}
 
 //randomize RGB values to override styles.css body background-color key-value pair
 function getRandomColor() {
@@ -77,7 +77,7 @@ function getRandomColor() {
   blue = Math.floor(Math.random()*256);
   rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
   document.body.style.backgroundColor = rgbColor;
-};
+}
 
 //combined function for use with eventListener() and setInterval()
 function combineFunction(){
@@ -85,10 +85,10 @@ function combineFunction(){
   getRandomColor();
   //calls getRandomQuote function and prints to HTML page
   printQuote();
-};
+}
 
 //5 second timer to randomly generate quote and background color
 var intervalID = window.setInterval(myCallback, 5000);
 function myCallback() {
   combineFunction();
-};
+}
