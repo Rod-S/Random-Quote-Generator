@@ -80,7 +80,7 @@ function getRandomColor() {
 }
 
 //combined function for use with eventListener() and setInterval()
-function combineFunction(){
+function combineFunction() {
   //calls getRandomColor function and randomizes the HTML background
   getRandomColor();
   //calls getRandomQuote function and prints to HTML page
