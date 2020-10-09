@@ -47,48 +47,41 @@ function getRandomQuote() {
 
 //call getRandomQuote function, concatenate HTML string and print quote to the page
 function printQuote() {
-  var randomObject = getRandomQuote();
-  //conditional added for quote object lacking year or citation properties
-  if(randomObject.year == undefined || randomObject.citation == undefined){
-    var quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
-    quoteHTML += '<p class="source">' + randomObject.source + '';
-    quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
-    var outputDiv = document.getElementById('quote-box');
-	  outputDiv.innerHTML = quoteHTML;
-  } else {
-      var quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
-      quoteHTML += '<p class="source">' + randomObject.source + '';
-      quoteHTML +=  '<span class="citation">' + randomObject.citation + '</span>';
-      quoteHTML +=  '<span class="year">' + randomObject.year;
-      quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
-      var outputDiv = document.getElementById('quote-box');
+    var quoteHTML;
+    var outputDiv;
+    var randomObject = getRandomQuote();
+    //conditional added for quote object lacking year or citation properties
+    if(!randomObject.year|| !randomObject.citation){
+        quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
+        quoteHTML += '<p class="source">' + randomObject.source + '';
+        quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
+        outputDiv = document.getElementById('quote-box');
+        outputDiv.innerHTML = quoteHTML;
+     } else {
+        quoteHTML = '<p class="quote">' + randomObject.quote + '</p>';
+        quoteHTML += '<p class="source">' + randomObject.source + '';
+        quoteHTML +=  '<span class="citation">' + randomObject.citation + '</span>';
+        quoteHTML +=  '<span class="year">' + randomObject.year;
+        quoteHTML += '<span class="category">' + randomObject.category + '</span> </p>';
+        outputDiv = document.getElementById('quote-box');
 	    outputDiv.innerHTML = quoteHTML;
   }
 }
 
 //randomize RGB values to override styles.css body background-color key-value pair
 function getRandomColor() {
-  var red;
-  var green;
-  var blue;
-  var rgbColor;
-  red = Math.floor(Math.random()*256);
-  green = Math.floor(Math.random()*256);
-  blue = Math.floor(Math.random()*256);
-  rgbColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
-  document.body.style.backgroundColor = rgbColor;
+  let red = Math.floor(Math.random()*256);
+  let green = Math.floor(Math.random()*256);
+  let blue = Math.floor(Math.random()*256);
+    document.body.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
 }
 
 //combined function for use with eventListener() and setInterval()
 function combineFunction() {
-  //calls getRandomColor function and randomizes the HTML background
   getRandomColor();
-  //calls getRandomQuote function and prints to HTML page
   printQuote();
 }
 
 //5 second timer to randomly generate quote and background color
-var intervalID = window.setInterval(myCallback, 5000);
-function myCallback() {
-  combineFunction();
-}
+var intervalID = window.setInterval(combineFunction, 5000);
+
