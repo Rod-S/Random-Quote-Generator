@@ -4,12 +4,10 @@
     // document.getElementById('loadQuote').addEventListener("click", combineFunction, false);
 
     //array of quote objects
-    var quotes;
 
-    $.ajax("http://aphorisms.glitch.me/api/all").done(function(data, status, jqXhr) {
+    $.ajax("http://aphorisms.glitch.me/api/all").done(function(data) {
         var quotes = data;
         quotes.push(data);
-        console.log(quotes);
         document.getElementById('loadQuote').addEventListener("click", combineFunction, false);
         //return a random object from quotes array
         function getRandomQuote() {
