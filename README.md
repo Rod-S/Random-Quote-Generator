@@ -1,4 +1,3 @@
 # Unit 1 - Random Quote Generator#
-  --attempt for exceeds expectations mark
-  --Please download script.js, index0.html, normalize.css and styles.css to view the page.
-  --Files are located in project-edit-1 branch
+  --original project with hardcoded quotes object now on separate branch from master
+  --master branch now uses jquery AJAX request to dynamically populate quotes object to be used in quote generator
