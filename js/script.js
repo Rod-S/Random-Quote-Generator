@@ -3,38 +3,6 @@
     // when user clicks anywhere on the button, the "combineFunction" function is called
     document.getElementById('loadQuote').addEventListener("click", combineFunction, false);
 
-    // function retrieveAphorisms() {
-    //
-        // Creating the XMLHttpRequest object
-    //     var request = new XMLHttpRequest();
-    //
-    //     // Instantiating the request object
-    //     request.open("GET", "http://aphorisms.glitch.me/api/all", true);
-    //
-    //     // Defining event listener for readystatechange event
-    //     request.onreadystatechange = function() {
-    //
-    //         // Check if the request is compete and was successful
-    //         if (this.readyState === 4 && this.status === 200) {
-    //
-    //             // Inserting the response from server into an HTML element
-    //             console.log(request.responseText)
-    //         }
-    //         // Sending the request to the server
-    //         request.send();
-    //     }
-    // }
-    // retrieveAphorisms();
-        function httpGet(theUrl)
-        {
-            var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-            xmlHttp.send( null );
-            console.log(xmlHttp.responseText);
-            return xmlHttp.responseText;
-        }
-        httpGet("http://aphorisms.glitch.me/api/all");
-
     //array of quote objects
     var quotes = [
         {
